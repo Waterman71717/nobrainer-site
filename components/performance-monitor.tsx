@@ -1,3 +1,4 @@
+/// <reference lib="dom" />
 "use client"
 
 import { useEffect } from "react"
@@ -29,7 +30,7 @@ export function PerformanceMonitor() {
           // Explicitly check for 'layout-shift' and then assert the type
           // This tells TypeScript that 'entry' is a 'LayoutShift' which has a 'value' property
           if (entry.entryType === "layout-shift") {
-            clsValue += (entry as LayoutShift).value;
+            clsValue += (entry as LayoutShift).value; // <-- This is where LayoutShift is used
           }
         }
         console.log("CLS:", clsValue)
