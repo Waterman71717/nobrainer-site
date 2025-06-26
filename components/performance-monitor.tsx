@@ -26,9 +26,11 @@ export function PerformanceMonitor() {
       let clsValue = 0
       const clsObserver = new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) {
-          // REMOVED: if (!entry.hadRecentInput) {
-          clsValue += entry.value
-          // REMOVED: }
+          // Explicitly check for 'layout-shift' and then assert the type
+          // This tells TypeScript that 'entry' is a 'LayoutShift' which has a 'value' property
+          if (entry.entryType === "layout-shift") {
+            clsValue += (entry as LayoutShift).value;
+          }
         }
         console.log("CLS:", clsValue)
       })
