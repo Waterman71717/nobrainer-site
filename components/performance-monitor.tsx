@@ -26,9 +26,9 @@ export function PerformanceMonitor() {
       let clsValue = 0
       const clsObserver = new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) {
-          if (!entry.hadRecentInput) {
-            clsValue += entry.value
-          }
+          // REMOVED: if (!entry.hadRecentInput) {
+          clsValue += entry.value
+          // REMOVED: }
         }
         console.log("CLS:", clsValue)
       })
