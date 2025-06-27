@@ -3,6 +3,22 @@
 
 import { useEffect } from "react"
 
+// Explicitly declare the LayoutShift interface if it's not being picked up globally.
+// This provides a fallback definition for TypeScript.
+declare interface LayoutShift extends PerformanceEntry {
+  value: number;
+  hadRecentInput: boolean; // Re-adding for completeness, though we're not using it in your logic
+  sources?: Array<LayoutShiftAttribution>;
+}
+
+// You might also need LayoutShiftAttribution, depending on strictness
+declare interface LayoutShiftAttribution {
+  node?: Node;
+  currentRect: DOMRectReadOnly;
+  previousRect: DOMRectReadOnly;
+}
+
+
 export function PerformanceMonitor() {
   useEffect(() => {
     // Core Web Vitals monitoring
@@ -28,9 +44,8 @@ export function PerformanceMonitor() {
       const clsObserver = new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) {
           // Explicitly check for 'layout-shift' and then assert the type
-          // This tells TypeScript that 'entry' is a 'LayoutShift' which has a 'value' property
           if (entry.entryType === "layout-shift") {
-            clsValue += (entry as LayoutShift).value; // <-- This is where LayoutShift is used
+            clsValue += (entry as LayoutShift).value;
           }
         }
         console.log("CLS:", clsValue)
