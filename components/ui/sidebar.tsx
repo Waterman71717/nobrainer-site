@@ -44,7 +44,8 @@ function useSidebar() {
     throw new Error("useSidebar must be used within a SidebarProvider.")
   }
 
-  return context
+  // **** THIS IS THE ONLY CHANGE ****
+  return context as NonNullable<SidebarContext>
 }
 
 const SidebarProvider = React.forwardRef<
@@ -555,6 +556,8 @@ const SidebarMenuButton = React.forwardRef<
   ) => {
     const Comp = asChild ? Slot : "button"
 
+    const { isMobile, state } = useSidebar() // This line is present.
+
     const button = (
       <Comp
         ref={ref}
@@ -582,7 +585,7 @@ const SidebarMenuButton = React.forwardRef<
         <TooltipContent
           side="right"
           align="center"
-          hidden={state !== "collapsed" || isMobile}
+          hidden={state !== "collapsed" || isMobile} // Line 585 where error occurs.
           {...tooltip}
         />
       </Tooltip>
