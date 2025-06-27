@@ -61,7 +61,7 @@ const SidebarProvider = React.forwardRef<
       open: openProp,
       onOpenChange: setOpenProp,
       className,
-      style,
+      style: propStyle, // Renamed 'style' to 'propStyle' to avoid conflict
       children,
       ...props
     },
@@ -137,7 +137,7 @@ const SidebarProvider = React.forwardRef<
               {
                 "--sidebar-width": SIDEBAR_WIDTH,
                 "--sidebar-width-icon": SIDEBAR_WIDTH_ICON,
-                ...style,
+                ...propStyle, // Use the renamed prop here
               } as React.CSSProperties
             }
             className={cn(
@@ -554,7 +554,6 @@ const SidebarMenuButton = React.forwardRef<
     ref
   ) => {
     const Comp = asChild ? Slot : "button"
-    const { isMobile, state } = useSidebar()
 
     const button = (
       <Comp
