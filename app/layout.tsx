@@ -90,7 +90,13 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.ico" />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+
+        {/* Start of HubSpot Embed Code */}
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/243105880.js"></script>
+        {/* End of HubSpot Embed Code */}
+      </body>
     </html>
   )
 }
