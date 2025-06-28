@@ -75,30 +75,36 @@ export default function PricingPage() {
       <div className="min-h-screen bg-white">
         <Header />
         <main className="pt-24">
-          {/* Hero Section */}
+          {/* Pricing-Focused Hero Section */}
           <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
-                {/* Left Content */}
+                {/* Left Content - Pricing Focused */}
                 <div className="text-left">
                   <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                    AI-Powered Call Center <span className="text-blue-600">Solutions</span>
+                    Simple, <span className="text-blue-600">Transparent</span> Pricing
                   </h1>
                   <p className="text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed">
-                    Transform your customer service with cutting-edge AI automation. Choose the perfect plan to revolutionize your customer experience and boost efficiency.
+                    Choose the plan that fits your business size and goals. No hidden fees, no surprises. Scale up or down as your business grows.
                   </p>
-                  <div className="flex flex-wrap gap-6 text-sm text-gray-500">
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                      500+ Clients Served
+                  <div className="flex flex-wrap gap-6 text-lg">
+                    <div className="flex items-center text-green-600">
+                      <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      No hidden fees
                     </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                      98% Satisfaction Rate
+                    <div className="flex items-center text-green-600">
+                      <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      Cancel anytime
                     </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                      40% Cost Reduction
+                    <div className="flex items-center text-green-600">
+                      <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      30-day money back
                     </div>
                   </div>
                 </div>
@@ -108,23 +114,22 @@ export default function PricingPage() {
                   <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                     <img
                       src="https://page1.genspark.site/v1/base64_upload/166c0f4408c20a3d73b3c5dd2f5c084f"
-                      alt="AI-powered call center agent with futuristic digital interface overlays"
+                      alt="Professional consultation for AI call center pricing plans"
                       className="w-full h-auto object-cover"
                       loading="eager"
                     />
-                    {/* Overlay for better text readability if needed */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
                   </div>
                   
-                  {/* Floating stats cards */}
+                  {/* Updated floating cards */}
                   <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4 border">
                     <div className="text-2xl font-bold text-blue-600">24/7</div>
-                    <div className="text-sm text-gray-600">AI Support</div>
+                    <div className="text-sm text-gray-600">Support</div>
                   </div>
                   
                   <div className="absolute -top-6 -right-6 bg-white rounded-xl shadow-lg p-4 border">
-                    <div className="text-2xl font-bold text-green-600">99.9%</div>
-                    <div className="text-sm text-gray-600">Uptime</div>
+                    <div className="text-2xl font-bold text-green-600">Free</div>
+                    <div className="text-sm text-gray-600">Consultation</div>
                   </div>
                 </div>
               </div>
@@ -338,31 +343,6 @@ export default function PricingPage() {
                   </div>
                 </div>
               )}
-
-              {/* Free Consultation CTA */}
-              <div className="text-center mt-20 bg-gradient-to-r from-blue-50 to-purple-50 p-12 rounded-3xl border border-blue-100">
-                <div className="max-w-3xl mx-auto">
-                  <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">Not Sure Which Plan Is Right for You?</h3>
-                  <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                    Our AI specialists will assess your unique business needs and recommend the perfect solution tailored specifically for your organization.
-                  </p>
-                  <button
-                    onClick={(e) => handlePlanClick("Free Consultation", e)}
-                    disabled={clickedButton === "Free Consultation"}
-                    className={getButtonStyle("Free Consultation", "bg-gradient-to-r from-blue-600 to-purple-600 text-white px-12 py-4 rounded-xl font-semibold text-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1")}
-                  >
-                    {getButtonContent("Free Consultation", "Schedule Free Consultation")}
-                  </button>
-                  <p className="text-sm text-gray-500 mt-4">
-                    Free 30-minute consultation • No commitment required • Expert guidance included
-                  </p>
-                </div>
-              </div>
             </div>
           </section>
 
