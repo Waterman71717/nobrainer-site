@@ -5,6 +5,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Phone, Mail, MapPin, Clock, CheckCircle, Star, Users, Award } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
 
+// Declare HubSpot types
+declare global {
+  interface Window {
+    hbspt?: {
+      forms: {
+        create: (options: {
+          region: string
+          portalId: string
+          formId: string
+          target: string
+        }) => void
+      }
+    }
+  }
+}
+
 const trustIndicators = [
   {
     icon: Users,
@@ -37,8 +53,8 @@ export function Contact() {
   const [formError, setFormError] = useState<string | null>(null)
 
   useEffect(() => {
-    // Check if HubSpot script already exists
-    const existingScript = document.querySelector('script[src*="hsforms.net"]')
+    // Check if script already exists
+    const existingScript = document.querySelector('script[src*="js-na2.hsforms.net"]')
     
     if (existingScript) {
       // Script already exists, check if HubSpot is available
@@ -60,14 +76,19 @@ export function Contact() {
       return
     }
 
-    // Create new script if it doesn't exist
     const script = document.createElement("script")
     script.src = "https://js-na2.hsforms.net/forms/embed/243105880.js"
     script.defer = true
-    script.id = "hubspot-forms-script"
 
     script.onload = () => {
-      setIsFormLoaded(true)
+      const waitForHubSpot = () => {
+        if (window.hbspt) {
+          setIsFormLoaded(true)
+        } else {
+          setTimeout(waitForHubSpot, 100)
+        }
+      }
+      waitForHubSpot()
     }
 
     script.onerror = () => {
@@ -77,7 +98,9 @@ export function Contact() {
     document.body.appendChild(script)
 
     return () => {
-      // Don't remove script on unmount to avoid conflicts
+      if (document.body.contains(script)) {
+        document.body.removeChild(script)
+      }
     }
   }, [])
 
