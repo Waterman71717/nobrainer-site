@@ -85,7 +85,7 @@ export default function PricingPage() {
                     Simple, <span className="text-blue-600">Transparent</span> Pricing
                   </h1>
                   <p className="text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed">
-                    Choose the plan that fits your business size and goals. No hidden fees, no surprises. Scale up or down as your business grows.
+                    Choose the plan that fits your business size and goals. Graduated pricing protects your investment with lower ongoing costs after initial setup period.
                   </p>
                   <div className="flex flex-wrap gap-6 text-lg">
                     <div className="flex items-center text-green-600">
@@ -98,13 +98,13 @@ export default function PricingPage() {
                       <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      Cancel anytime
+                      Lower costs after setup
                     </div>
                     <div className="flex items-center text-green-600">
                       <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      30-day money back
+                      Protected investment
                     </div>
                   </div>
                 </div>
@@ -121,7 +121,7 @@ export default function PricingPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
                   </div>
                   
-                  {/* Updated floating cards */}
+                  {/* Floating cards */}
                   <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4 border">
                     <div className="text-2xl font-bold text-blue-600">24/7</div>
                     <div className="text-sm text-gray-600">Support</div>
@@ -141,99 +141,120 @@ export default function PricingPage() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
                 <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                  Choose Your <span className="text-blue-600">Perfect Plan</span>
+                  Choose Your <span className="text-blue-600">AI Solution</span>
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  From startups to enterprise organizations, we have the right AI solution to transform your customer service operations.
+                  Graduated pricing model: Higher initial months cover setup costs, then lower ongoing rates for long-term value.
                 </p>
               </div>
 
               {/* Pricing Grid */}
               <div className="grid lg:grid-cols-4 gap-8 lg:gap-6">
-                {/* Essential Helper */}
+                {/* AI Starter */}
                 <div className={`bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border ${
-                  selectedPlan === "Essential Helper" ? "ring-2 ring-blue-400 -translate-y-2" : "border-gray-200"
+                  selectedPlan === "AI Starter" ? "ring-2 ring-blue-400 -translate-y-2" : "border-gray-200"
                 }`}>
                   <div className="text-center mb-6">
                     <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-bold mb-2">Essential Helper</h3>
-                    <p className="text-gray-600 mb-4">Perfect for Solo Entrepreneurs</p>
-                    <div className="text-3xl font-bold text-blue-600 mb-2">$999</div>
-                    <div className="text-sm text-gray-500 mb-2">One-time setup</div>
-                    <div className="text-2xl font-bold mb-4">$150/mo</div>
+                    <h3 className="text-2xl font-bold mb-2">AI Starter</h3>
+                    <p className="text-gray-600 mb-4">Basic AI Automation</p>
+                    
+                    {/* Graduated Pricing Display */}
+                    <div className="bg-gray-50 rounded-lg p-3 mb-4">
+                      <div className="text-lg font-bold text-blue-600 mb-1">$447/month</div>
+                      <div className="text-xs text-gray-500 mb-2">Months 1-6</div>
+                      <div className="text-2xl font-bold text-green-600 mb-1">$297/month</div>
+                      <div className="text-xs text-gray-500">Month 7+</div>
+                    </div>
+                    <div className="text-sm text-gray-600 mb-4">+ $497 setup fee</div>
                   </div>
                   <ul className="space-y-3 text-sm mb-6">
                     <li className="flex items-center">
-                      <span className="text-green-500 mr-2">✓</span>Up to 5 IVR menu options
+                      <span className="text-green-500 mr-2">✓</span>Basic Generative AI Chatbot
                     </li>
                     <li className="flex items-center">
-                      <span className="text-green-500 mr-2">✓</span>Basic call routing
+                      <span className="text-green-500 mr-2">✓</span>Simple Call Routing (5 agents max)
                     </li>
                     <li className="flex items-center">
-                      <span className="text-green-500 mr-2">✓</span>Customized voicemail
+                      <span className="text-green-500 mr-2">✓</span>Basic Conversational IVR
                     </li>
                     <li className="flex items-center">
-                      <span className="text-green-500 mr-2">✓</span>Email support
+                      <span className="text-green-500 mr-2">✓</span>Basic Analytics Dashboard
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span>Email & Chat Support
                     </li>
                   </ul>
                   <button
-                    onClick={(e) => handlePlanClick("Essential Helper", e)}
-                    disabled={clickedButton === "Essential Helper"}
-                    className={getButtonStyle("Essential Helper", "w-full bg-blue-600 text-white py-4 px-6 rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg")}
+                    onClick={(e) => handlePlanClick("AI Starter", e)}
+                    disabled={clickedButton === "AI Starter"}
+                    className={getButtonStyle("AI Starter", "w-full bg-blue-600 text-white py-4 px-6 rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg")}
                   >
-                    {getButtonContent("Essential Helper", "Get Started")}
+                    {getButtonContent("AI Starter", "Get Started")}
                   </button>
                 </div>
 
-                {/* Efficient Operator */}
+                {/* AI Professional */}
                 <div className={`bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border ${
-                  selectedPlan === "Efficient Operator" ? "ring-2 ring-blue-400 -translate-y-2" : "border-gray-200"
+                  selectedPlan === "AI Professional" ? "ring-2 ring-blue-400 -translate-y-2" : "border-gray-200"
                 }`}>
                   <div className="text-center mb-6">
                     <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-bold mb-2">Efficient Operator</h3>
-                    <p className="text-gray-600 mb-4">Built for Growing Teams</p>
-                    <div className="text-3xl font-bold text-blue-600 mb-2">$1,565</div>
-                    <div className="text-sm text-gray-500 mb-2">One-time setup</div>
-                    <div className="text-2xl font-bold mb-4">$299/mo</div>
+                    <h3 className="text-2xl font-bold mb-2">AI Professional</h3>
+                    <p className="text-gray-600 mb-4">Advanced AI Intelligence</p>
+                    
+                    {/* Graduated Pricing Display */}
+                    <div className="bg-gray-50 rounded-lg p-3 mb-4">
+                      <div className="text-lg font-bold text-blue-600 mb-1">$847/month</div>
+                      <div className="text-xs text-gray-500 mb-2">Months 1-6</div>
+                      <div className="text-2xl font-bold text-green-600 mb-1">$597/month</div>
+                      <div className="text-xs text-gray-500">Month 7+</div>
+                    </div>
+                    <div className="text-sm text-gray-600 mb-4">+ $997 setup fee</div>
                   </div>
                   <ul className="space-y-3 text-sm mb-6">
                     <li className="flex items-center">
-                      <span className="text-green-500 mr-2">✓</span>Up to 10 IVR menu options
+                      <span className="text-green-500 mr-2">✓</span>Advanced Generative AI Chatbot
                     </li>
                     <li className="flex items-center">
-                      <span className="text-green-500 mr-2">✓</span>Advanced call routing
+                      <span className="text-green-500 mr-2">✓</span>Intelligent Call Routing (20 agents)
                     </li>
                     <li className="flex items-center">
-                      <span className="text-green-500 mr-2">✓</span>Up to 5 SMS templates
+                      <span className="text-green-500 mr-2">✓</span>AI Chat Response Suggestions
                     </li>
                     <li className="flex items-center">
-                      <span className="text-green-500 mr-2">✓</span>Appointment reminders
+                      <span className="text-green-500 mr-2">✓</span>Advanced Conversational IVR/IVA
                     </li>
                     <li className="flex items-center">
-                      <span className="text-green-500 mr-2">✓</span>Priority email & phone support
+                      <span className="text-green-500 mr-2">✓</span>Basic Predictive Analytics
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span>CRM Integration
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span>Priority Email & Phone Support
                     </li>
                   </ul>
                   <button
-                    onClick={(e) => handlePlanClick("Efficient Operator", e)}
-                    disabled={clickedButton === "Efficient Operator"}
-                    className={getButtonStyle("Efficient Operator", "w-full bg-blue-600 text-white py-4 px-6 rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg")}
+                    onClick={(e) => handlePlanClick("AI Professional", e)}
+                    disabled={clickedButton === "AI Professional"}
+                    className={getButtonStyle("AI Professional", "w-full bg-blue-600 text-white py-4 px-6 rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg")}
                   >
-                    {getButtonContent("Efficient Operator", "Get Started")}
+                    {getButtonContent("AI Professional", "Get Started")}
                   </button>
                 </div>
 
-                {/* Total Customer Care - MOST POPULAR */}
+                {/* AI Enterprise - MOST POPULAR */}
                 <div className={`bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-2 border-green-400 relative ${
-                  selectedPlan === "Total Customer Care" ? "ring-2 ring-green-500 -translate-y-2" : ""
+                  selectedPlan === "AI Enterprise" ? "ring-2 ring-green-500 -translate-y-2" : ""
                 }`}>
                   {/* Most Popular Badge */}
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -245,82 +266,114 @@ export default function PricingPage() {
                   <div className="text-center mb-6 mt-4">
                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-bold mb-2">Total Customer Care</h3>
-                    <p className="text-gray-600 mb-4">Complete Business Solution</p>
-                    <div className="text-3xl font-bold text-green-600 mb-2">$2,448</div>
-                    <div className="text-sm text-gray-500 mb-2">One-time setup</div>
-                    <div className="text-2xl font-bold mb-4">$499/mo</div>
+                    <h3 className="text-2xl font-bold mb-2">AI Enterprise</h3>
+                    <p className="text-gray-600 mb-4">Complete AI Solution</p>
+                    
+                    {/* Graduated Pricing Display */}
+                    <div className="bg-gray-50 rounded-lg p-3 mb-4">
+                      <div className="text-lg font-bold text-blue-600 mb-1">$1,597/month</div>
+                      <div className="text-xs text-gray-500 mb-2">Months 1-6</div>
+                      <div className="text-2xl font-bold text-green-600 mb-1">$1,197/month</div>
+                      <div className="text-xs text-gray-500">Month 7+</div>
+                    </div>
+                    <div className="text-sm text-gray-600 mb-4">+ $1,497 setup fee</div>
                   </div>
                   <ul className="space-y-3 text-sm mb-6">
                     <li className="flex items-center">
-                      <span className="text-green-500 mr-2">✓</span>Unlimited menu options
+                      <span className="text-green-500 mr-2">✓</span>Enterprise Generative AI Chatbot
                     </li>
                     <li className="flex items-center">
-                      <span className="text-green-500 mr-2">✓</span>CRM integration
+                      <span className="text-green-500 mr-2">✓</span>Advanced Intelligent Call Routing
                     </li>
                     <li className="flex items-center">
-                      <span className="text-green-500 mr-2">✓</span>Custom voice branding
+                      <span className="text-green-500 mr-2">✓</span>Full Predictive Analytics Suite
                     </li>
                     <li className="flex items-center">
-                      <span className="text-green-500 mr-2">✓</span>Dedicated account manager
+                      <span className="text-green-500 mr-2">✓</span>Advanced Conversational IVR/IVA
                     </li>
                     <li className="flex items-center">
-                      <span className="text-green-500 mr-2">✓</span>Advanced analytics
+                      <span className="text-green-500 mr-2">✓</span>AI Chat Response Suggestions
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span>Unlimited Agents & Integrations
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span>Dedicated Account Manager
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span>24/7 Premium Support
                     </li>
                   </ul>
                   <button
-                    onClick={(e) => handlePlanClick("Total Customer Care", e)}
-                    disabled={clickedButton === "Total Customer Care"}
-                    className={getButtonStyle("Total Customer Care", "w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white py-4 px-6 rounded-xl font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 shadow-lg transform hover:scale-105")}
+                    onClick={(e) => handlePlanClick("AI Enterprise", e)}
+                    disabled={clickedButton === "AI Enterprise"}
+                    className={getButtonStyle("AI Enterprise", "w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white py-4 px-6 rounded-xl font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 shadow-lg transform hover:scale-105")}
                   >
-                    {getButtonContent("Total Customer Care", "Get Started")}
+                    {getButtonContent("AI Enterprise", "Get Started")}
                   </button>
                 </div>
 
-                {/* Enterprise */}
+                {/* Custom AI Solutions */}
                 <div className={`bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-lg p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-white ${
-                  selectedPlan === "Enterprise" ? "ring-2 ring-yellow-400 -translate-y-2" : ""
+                  selectedPlan === "Custom AI Solutions" ? "ring-2 ring-yellow-400 -translate-y-2" : ""
                 }`}>
                   <div className="text-center mb-6">
                     <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <svg className="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-bold mb-2">Enterprise</h3>
-                    <p className="text-gray-300 mb-4">High-Volume Operations</p> 
+                    <h3 className="text-2xl font-bold mb-2">Custom AI Solutions</h3>
+                    <p className="text-gray-300 mb-4">Tailored AI Architecture</p> 
                     <div className="text-3xl font-bold text-yellow-400 mb-2">Custom</div>
                     <div className="text-sm text-gray-300 mb-2">Pricing</div>
                     <div className="text-2xl font-bold mb-4">Quote Required</div>
                   </div>
                   <ul className="space-y-3 text-sm mb-6">
                     <li className="flex items-center">
-                      <span className="text-yellow-400 mr-2">✓</span>Fully customizable
+                      <span className="text-yellow-400 mr-2">✓</span>Fully Custom AI Development
                     </li>
                     <li className="flex items-center">
-                      <span className="text-yellow-400 mr-2">✓</span>Multiple locations
+                      <span className="text-yellow-400 mr-2">✓</span>Multi-Location Deployment
                     </li>
                     <li className="flex items-center">
-                      <span className="text-yellow-400 mr-2">✓</span>Advanced integrations
+                      <span className="text-yellow-400 mr-2">✓</span>Advanced AI Model Training
                     </li>
                     <li className="flex items-center">
-                      <span className="text-yellow-400 mr-2">✓</span>SLA guarantees
+                      <span className="text-yellow-400 mr-2">✓</span>Enterprise API Integration
                     </li>
                     <li className="flex items-center">
-                      <span className="text-yellow-400 mr-2">✓</span>Enterprise support
+                      <span className="text-yellow-400 mr-2">✓</span>SLA & Compliance Guarantees
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-yellow-400 mr-2">✓</span>White-label Solutions
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-yellow-400 mr-2">✓</span>Dedicated AI Engineering Team
                     </li>
                   </ul>
                   <button
-                    onClick={(e) => handlePlanClick("Enterprise", e)}
-                    disabled={clickedButton === "Enterprise"}
-                    className={getButtonStyle("Enterprise", "w-full bg-yellow-500 text-gray-900 py-4 px-6 rounded-xl font-semibold hover:bg-yellow-400 transition-colors shadow-lg")}
+                    onClick={(e) => handlePlanClick("Custom AI Solutions", e)}
+                    disabled={clickedButton === "Custom AI Solutions"}
+                    className={getButtonStyle("Custom AI Solutions", "w-full bg-yellow-500 text-gray-900 py-4 px-6 rounded-xl font-semibold hover:bg-yellow-400 transition-colors shadow-lg")}
                   >
-                    {getButtonContent("Enterprise", "Contact Sales")}
+                    {getButtonContent("Custom AI Solutions", "Contact Sales")}
                   </button>
                 </div>
+              </div>
+
+              {/* Contract Terms Notice */}
+              <div className="mt-16 bg-blue-50 border border-blue-200 rounded-xl p-6 text-center">
+                <h3 className="text-lg font-semibold text-blue-900 mb-2">Contract Terms & Setup Protection</h3>
+                <p className="text-blue-800 text-sm leading-relaxed max-w-4xl mx-auto">
+                  All plans require a 12-month minimum commitment. Setup fees are non-refundable and designed to cover AI system customization, training, and integration. 
+                  Early termination within the first 12 months requires payment of remaining setup cost amortization to protect our investment in your AI infrastructure.
+                  Graduated pricing ensures you get maximum value as your AI system matures and delivers increasing ROI.
+                </p>
               </div>
 
               {/* Selected Plan Display */}
