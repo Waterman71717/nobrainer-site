@@ -366,8 +366,15 @@ export default function PricingPage() {
                 </div>
               </div>
 
+              {/* Simple Infrastructure Notice */}
+              <div className="mt-12 text-center">
+                <p className="text-sm text-gray-500">
+                  *All plans include AWS cloud infrastructure. Usage-based costs will be discussed during your consultation.
+                </p>
+              </div>
+
               {/* Contract Terms Notice */}
-              <div className="mt-16 bg-blue-50 border border-blue-200 rounded-xl p-6 text-center">
+              <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6 text-center">
                 <h3 className="text-lg font-semibold text-blue-900 mb-2">Contract Terms & Setup Protection</h3>
                 <p className="text-blue-800 text-sm leading-relaxed max-w-4xl mx-auto">
                   All plans require a 12-month minimum commitment. Setup fees are non-refundable and designed to cover AI system customization, training, and integration. 
