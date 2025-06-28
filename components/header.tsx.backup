@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { usePathname, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Phone } from "lucide-react"
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll"
@@ -9,25 +8,10 @@ import { useSmoothScroll } from "@/hooks/use-smooth-scroll"
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { scrollToSection } = useSmoothScroll()
-  const pathname = usePathname()
-  const router = useRouter()
 
   const handleNavClick = (sectionId: string) => {
-    if (pathname === "/") {
-      scrollToSection(sectionId)
-    } else {
-      router.push(`/#${sectionId}`)
-    }
-    setIsMenuOpen(false)
-  }
-
-  const handleGetStarted = () => {
-    if (pathname === "/") {
-      scrollToSection("contact")
-    } else {
-      router.push("/#contact")
-    }
-    setIsMenuOpen(false)
+    scrollToSection(sectionId)
+    setIsMenuOpen(false) // Close mobile menu
   }
 
   return (
@@ -36,12 +20,7 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
             <Phone className="h-8 w-8 text-blue-600" />
-            <button 
-              onClick={() => router.push("/")}
-              className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
-            >
-              Nobrainer Group
-            </button>
+            <span className="text-xl font-bold text-gray-900">Nobrainer Group</span>
           </div>
 
           <nav className="hidden md:flex space-x-8">
@@ -58,16 +37,6 @@ export function Header() {
               About
             </button>
             <button
-              onClick={() => router.push("/pricing")}
-              className={`transition-colors ${
-                pathname === "/pricing" 
-                  ? "text-blue-600 font-medium" 
-                  : "text-gray-700 hover:text-blue-600"
-              }`}
-            >
-              Pricing
-            </button>
-            <button
               onClick={() => handleNavClick("process")}
               className="text-gray-700 hover:text-blue-600 transition-colors"
             >
@@ -82,10 +51,7 @@ export function Header() {
           </nav>
 
           <div className="hidden md:block">
-            <Button 
-              className="bg-blue-600 hover:bg-blue-700 text-white" 
-              onClick={handleGetStarted}
-            >
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white" onClick={() => scrollToSection("contact")}>
               Get Started
             </Button>
           </div>
@@ -104,36 +70,17 @@ export function Header() {
               >
                 Services
               </button>
-              <button 
-                onClick={() => handleNavClick("about")} 
-                className="text-gray-700 hover:text-blue-600 text-left"
-              >
+              <button onClick={() => handleNavClick("about")} className="text-gray-700 hover:text-blue-600 text-left">
                 About
               </button>
-              <button
-                onClick={() => router.push("/pricing")}
-                className={`text-left transition-colors ${
-                  pathname === "/pricing" 
-                    ? "text-blue-600 font-medium" 
-                    : "text-gray-700 hover:text-blue-600"
-                }`}
-              >
-                Pricing
-              </button>
-              <button 
-                onClick={() => handleNavClick("process")} 
-                className="text-gray-700 hover:text-blue-600 text-left"
-              >
+              <button onClick={() => handleNavClick("process")} className="text-gray-700 hover:text-blue-600 text-left">
                 Process
               </button>
-              <button 
-                onClick={() => handleNavClick("contact")} 
-                className="text-gray-700 hover:text-blue-600 text-left"
-              >
+              <button onClick={() => handleNavClick("contact")} className="text-gray-700 hover:text-blue-600 text-left">
                 Contact
               </button>
               <Button
-                onClick={handleGetStarted}
+                onClick={() => scrollToSection("contact")}
                 className="bg-blue-600 hover:bg-blue-700 text-white w-full mt-4"
               >
                 Get Started
