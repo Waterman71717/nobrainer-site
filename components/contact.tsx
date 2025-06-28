@@ -21,21 +21,12 @@ export function Contact() {
   ]
 
   useEffect(() => {
-    const script = document.createElement('script')
-    script.src = 'https://js-na2.hsforms.net/forms/embed/243105880.js'
-    script.defer = true
-    
-    script.onload = () => {
-      console.log('HubSpot script loaded')
-    }
-    
-    document.head.appendChild(script)
-
-    return () => {
-      const existingScript = document.querySelector('script[src="https://js-na2.hsforms.net/forms/embed/243105880.js"]')
-      if (existingScript) {
-        document.head.removeChild(existingScript)
-      }
+    // Load script immediately, no delays
+    if (!document.querySelector('script[src="https://js-na2.hsforms.net/forms/embed/243105880.js"]')) {
+      const script = document.createElement('script')
+      script.src = 'https://js-na2.hsforms.net/forms/embed/243105880.js'
+      script.defer = true
+      document.head.appendChild(script)
     }
   }, [])
 
