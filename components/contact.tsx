@@ -2,7 +2,7 @@
 
 import { useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Phone, Mail, Clock, CheckCircle, Award } from "lucide-react"
+import { Phone, Mail, Clock, CheckCircle, Award, MapPin } from "lucide-react"
 
 declare global {
   interface Window {
@@ -108,7 +108,7 @@ export function Contact() {
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">Phone</div>
-                      <div className="text-gray-600">+1 (555) 123-4567</div>
+                      <div className="text-gray-600">+1 866-629-5754</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
@@ -116,8 +116,18 @@ export function Contact() {
                       <Mail className="h-5 w-5 text-green-600" />
                     </div>
                     <div>
-                      <div className="font-semibent text-gray-900">Email</div>
-                      <div className="text-gray-600">hello@nobrainergroup.com</div>
+                      <div className="font-semibold text-gray-900">Email</div>
+                      <div className="text-gray-600">business@nobrainergroup.com</div>
+                      <div className="text-gray-600">sales@nobrainergroup.com</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <MapPin className="h-5 w-5 text-purple-600" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900">Location</div>
+                      <div className="text-gray-600">Austin, Texas, USA</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
