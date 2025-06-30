@@ -7,16 +7,27 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    unoptimized: false, // Enable image optimization
+    formats: ['image/webp', 'image/avif'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'page1.genspark.site',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn1.genspark.ai',
+      }
+    ],
   },
   output: 'export',
-  // Optimize bundle splitting
+  
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.optimization.splitChunks = {
         chunks: 'all',
         minSize: 20000,
-        maxSize: 200000, // Smaller chunks
+        maxSize: 200000,
         cacheGroups: {
           vendor: {
             test: /[\\/]node_modules[\\/]/,
