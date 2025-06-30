@@ -39,6 +39,7 @@ export function Header() {
             <button 
               onClick={() => router.push("/")}
               className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
+              aria-label="Go to homepage"
             >
               Nobrainer Group
             </button>
@@ -90,7 +91,12 @@ export function Header() {
             </Button>
           </div>
 
-          <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button 
+            className="md:hidden" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+          >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
