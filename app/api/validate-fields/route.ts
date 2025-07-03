@@ -9,7 +9,7 @@ const AIRTABLE_TABLE_NAME = process.env.AIRTABLE_TABLE_NAME || "Leads"
 const EXPECTED_FIELDS = [
   // Contact Information
   "Name",
-  "Job_Title",
+  "JobTitle",
   "Email",
   "Phone Number",
   "Company",

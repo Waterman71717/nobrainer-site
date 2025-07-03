@@ -440,7 +440,7 @@ function mapToAirtableFields(data: LeadData, leadScore: number, roi: ROICalculat
     fields: {
       // Contact Information
       Name: data.fullName || "",
-      Job_Title: data.jobTitle || "",
+      JobTitle: data.jobTitle || "",
       Email: data.email || "",
       "Phone Number": data.phone || "",
       Company: data.companyName || "",
